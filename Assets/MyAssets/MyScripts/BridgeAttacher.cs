@@ -7,8 +7,10 @@ public class BridgeAttacher : MonoBehaviour {
 	public GameObject bridge;
 	public GameObject player;
 
-	void OnTriggerEnter() {
-		player.transform.parent = bridge.transform;
+	void OnTriggerEnter(Collider objectThatHit) {
+		if (objectThatHit.gameObject == player) {
+			player.transform.parent = bridge.transform;
+		}
 	}
 
 }
